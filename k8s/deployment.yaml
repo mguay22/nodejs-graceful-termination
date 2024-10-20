@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nodejs-graceful-termination
+  name: nodejs-graceful-termination
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-graceful-termination
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nodejs-graceful-termination
+    spec:
+      containers:
+        - image: mguay/nodejs-graceful-termination:latest
+          name: nodejs-graceful-termination
+          imagePullPolicy: Always

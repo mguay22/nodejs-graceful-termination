@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-graceful-termination
+spec:
+  selector:
+    app: nodejs-graceful-termination
+  ports:
+    - protocol: TCP
+      port: 3000
+  type: LoadBalancer
